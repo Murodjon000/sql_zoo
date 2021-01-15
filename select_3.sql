@@ -58,3 +58,20 @@ WHERE (subject='Medicine' AND yr<1910)
 SELECT yr,subject,winner
 FROM nobel
 WHERE winner='PETER GRÜNBERG'
+
+-- Find all details of the prize won by EUGENE O'NEILL
+SELECT yr,subject,winner
+FROM nobel
+WHERE winner LIKE'EUGENE%O%'
+
+-- Knights in order
+SELECT winner,yr,subject
+FROM nobel
+WHERE winner LIKE'Sir%'
+ORDER BY yr DESC
+
+-- Chemistry and Physics last
+SELECT winner, subject
+FROM nobel
+WHERE yr=1984
+ORDER BY subject IN('Chemistry','Physics'), subject,winner 
