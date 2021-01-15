@@ -17,3 +17,17 @@ WHERE winner = 'Albert Einstein'
 SELECT winner
 FROM nobel
 WHERE subject='Peace' AND yr>=2000
+
+-- Show all details (yr, subject, winner) of the Literature prize winners for 1980 to 1989 inclusive.
+SELECT yr, subject, winner
+FROM nobel
+WHERE subject='Literature' AND yr BETWEEN 1980 AND 1989
+
+-- Show all details of the presidential winners:
+SELECT * FROM nobel
+ WHERE subject='Peace'
+  AND winner IN ('Theodore Roosevelt',
+                  'Woodrow Wilson',
+                  'Jimmy Carter',
+                   'Barack Obama')
+
