@@ -47,3 +47,14 @@ SELECT yr,subject,winner
 FROM nobel
 WHERE (subject <>'Chemistry' AND subject <>'Medicine'  AND yr=1980) 
 
+
+-- Early Medicine, Late Literature
+SELECT yr,subject,winner
+FROM nobel
+WHERE (subject='Medicine' AND yr<1910) 
+     OR (subject='Literature'  AND yr>=2004) 
+
+-- Find all details of the prize won by PETER GRÜNBERG
+SELECT yr,subject,winner
+FROM nobel
+WHERE winner='PETER GRÜNBERG'
