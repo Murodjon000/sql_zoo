@@ -31,3 +31,8 @@ WHERE name LIKE 'United%'
 SELECT name,population,area
 FROM world
 WHERE area>3000000 OR population>250000000
+
+-- Exclusive OR (XOR). 
+SELECT name,population,area
+FROM world
+WHERE area>3000000 XOR population>250000000
