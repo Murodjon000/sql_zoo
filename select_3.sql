@@ -7,3 +7,13 @@ WHERE yr = 1960
 SELECT winner
 FROM nobel
 WHERE yr = 1962 AND subject = 'Literature'
+
+-- Show the year and subject that won 'Albert Einstein' his prize.
+SELECT yr,subject
+FROM nobel
+WHERE winner = 'Albert Einstein'
+
+-- Give the name of the 'Peace' winners since the year 2000, including 2000
+SELECT winner
+FROM nobel
+WHERE subject='Peace' AND yr>=2000
