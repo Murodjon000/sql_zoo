@@ -11,3 +11,8 @@ WHERE population >= 200000000
 SELECT name, gdp / population 
 FROM world 
 WHERE population>=200000000
+
+-- Show the name and population in millions for the countries of the continent 'South America'.
+SELECT name, population / 1000000
+FROM world
+WHERE continent = 'South America'
