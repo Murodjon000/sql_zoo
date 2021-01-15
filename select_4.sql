@@ -22,4 +22,8 @@ SELECT name,population
 FROM world
 WHERE population > (SELECT population FROM world WHERE name='Canada') AND population < (SELECT population FROM world WHERE name='Poland')
 
+-- Show the name and the population of each country in Europe. Show the population as a percentage of the population of Germany.
+SELECT name,CONCAT(ROUND(population/(SELECT population FROM world WHERE name='Germany')*100),'%') AS persantage
+FROM world
+WHERE continent='Europe';
 
