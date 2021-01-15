@@ -10,3 +10,12 @@ SELECT name
 FROM world
 WHERE continent='Europe' AND gdp/population > (SELECT gdp/population from world WHERE name='United Kingdom')
 
+
+-- List the name and continent of countries in the continents containing either Argentina or Australia. Order by name of the country.
+SELECT name,continent 
+FROM world
+WHERE continent IN(SELECT continent FROM world WHERE name IN ('Argentina' ,'Australia'))
+ORDER BY name
+
+
+
