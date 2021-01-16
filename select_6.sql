@@ -35,3 +35,10 @@ SELECT player
 FROM goal
 JOIN game ON (id=matchid)
 WHERE stadium='National Stadium, Warsaw'
+
+-- Show teamname and the total number of goals scored.
+SELECT teamname,COUNT(player)
+  FROM eteam JOIN goal ON id=teamid
+GROUP BY teamname
+ ORDER BY teamname
+
