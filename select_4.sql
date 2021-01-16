@@ -32,3 +32,9 @@ SELECT  name
 FROM world 
 WHERE gdp > ALL(SELECT gdp FROM world WHERE gdp>0 AND continent='Europe')
 
+-- Largest in each continent
+SELECT continent, name, area FROM world x
+  WHERE area >= ALL
+    (SELECT area FROM world y
+        WHERE y.continent=x.continent
+          AND area>0)
