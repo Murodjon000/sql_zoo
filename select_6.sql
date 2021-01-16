@@ -42,3 +42,9 @@ SELECT teamname,COUNT(player)
 GROUP BY teamname
  ORDER BY teamname
 
+-- Show the stadium and the number of goals scored in each stadium.
+ SELECT stadium,COUNT(player)
+FROM goal
+JOIN game ON matchid=id
+GROUP BY stadium
+ORDER BY stadium
