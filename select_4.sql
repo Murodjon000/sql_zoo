@@ -38,3 +38,8 @@ SELECT continent, name, area FROM world x
     (SELECT area FROM world y
         WHERE y.continent=x.continent
           AND area>0)
+
+-- First country of each continent (alphabetically)
+SELECT continent,name
+FROM world x
+WHERE name = (SELECT name FROM world y WHERE y.continent=x.continent ORDER BY name LIMIT 1 )
