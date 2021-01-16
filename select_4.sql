@@ -43,3 +43,8 @@ SELECT continent, name, area FROM world x
 SELECT continent,name
 FROM world x
 WHERE name = (SELECT name FROM world y WHERE y.continent=x.continent ORDER BY name LIMIT 1 )
+
+-- Difficult Questions That Utilize Techniques Not Covered In Prior Sections
+SELECT name,continent,population 
+FROM world x
+WHERE  25000000 >= ALL (SELECT population FROM world y WHERE x.continent=y.continent AND y.population>0)
