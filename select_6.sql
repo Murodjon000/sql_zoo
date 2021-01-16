@@ -29,3 +29,9 @@ JOIN eteam ON (teamid=id)
 FROM game
 JOIN eteam ON (team1=eteam.id)
 WHERE coach='Fernando Santos'
+
+-- List the player for every goal scored in a game where the stadium was 'National Stadium, Warsaw'
+SELECT player
+FROM goal
+JOIN game ON (id=matchid)
+WHERE stadium='National Stadium, Warsaw'
