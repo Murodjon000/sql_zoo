@@ -27,3 +27,8 @@ SELECT name,CONCAT(ROUND(population/(SELECT population FROM world WHERE name='Ge
 FROM world
 WHERE continent='Europe';
 
+-- Bigger than every country in Europe
+SELECT  name 
+FROM world 
+WHERE gdp > ALL(SELECT gdp FROM world WHERE gdp>0 AND continent='Europe')
+
