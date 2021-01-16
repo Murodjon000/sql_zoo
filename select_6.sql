@@ -17,3 +17,9 @@ SELECT team1,team2,player
 FROM goal
 JOIN game ON (id=matchid)
 WHERE player LIKE 'Mario%'
+
+-- Show player, teamid, coach, gtime for all goals scored in the first 10 minutes gtime<=10
+SELECT player, teamid,coach,gtime
+ FROM goal 
+JOIN eteam ON (teamid=id)
+ WHERE gtime<=10
