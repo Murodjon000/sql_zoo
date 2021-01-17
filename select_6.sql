@@ -48,3 +48,12 @@ FROM goal
 JOIN game ON matchid=id
 GROUP BY stadium
 ORDER BY stadium
+
+-- For every match involving 'POL', show the matchid, date and the number of goals scored.
+SELECT matchid,mdate, COUNT(teamid)
+FROM game 
+JOIN goal ON goal.matchid = game.id 
+WHERE 'POL' IN(team1,team2)
+GROUP BY matchid, mdate
+
+
