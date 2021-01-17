@@ -56,4 +56,10 @@ JOIN goal ON goal.matchid = game.id
 WHERE 'POL' IN(team1,team2)
 GROUP BY matchid, mdate
 
+-- For every match where 'GER' scored, show matchid, match date and the number of goals scored by 'GER'
+SELECT matchid,mdate,COUNT(player)
+FROM game
+JOIN goal ON goal.matchid = game.id 
+WHERE 'GER' IN(teamid)
+GROUP BY matchid,mdate
 
