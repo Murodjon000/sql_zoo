@@ -39,3 +39,10 @@ GROUP BY dept.name
 SELECT name,
 CASE WHEN dept=1 OR dept=2 THEN 'Sci' ELSE 'Art' END AS dept
 FROM teacher  
+
+
+-- Use CASE to show the name of each teacher followed by 'Sci' if the teacher is in dept 1 or 2, show 'Art' if the teacher's dept is 3 and 'None' otherwise.
+SELECT name,
+CASE WHEN dept=1 OR dept=2 THEN 'Sci'
+ WHEN  dept = 3 THEN 'Art' ELSE 'None' END AS dept
+FROM teacher  
