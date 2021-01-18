@@ -11,3 +11,9 @@ WHERE name = 'Craiglockhart'
 SELECT id,name 
 FROM stops JOIN route ON (stop=id)
 WHERE num='4'  AND company='LRT'
+
+-- The query shown gives the number of routes that visit either London Road (149) or Craiglockhart (53)
+SELECT company, num, COUNT(*)
+FROM route WHERE stop=149 OR stop=53
+GROUP BY company, num
+HAVING COUNT(*)=2
