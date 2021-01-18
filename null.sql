@@ -29,3 +29,8 @@ FROM teacher LEFT OUTER JOIN dept ON (dept.id=teacher.dept)
 -- Use COUNT to show the number of teachers and the number of mobile phones.
 SELECT COUNT(teacher.name),COUNT(teacher.mobile)
 FROM teacher
+
+-- Use COUNT and GROUP BY dept.name to show each department and the number of staff.
+SELECT dept.name,COUNT(teacher.name)
+FROM teacher RIGHT OUTER JOIN dept ON (dept.id=teacher.dept)
+GROUP BY dept.name
