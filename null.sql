@@ -25,3 +25,7 @@ FROM teacher
 -- Use the COALESCE function and a LEFT JOIN to print the teacher name and department name. Use the string 'None' where there is no department.
 SELECT teacher.name,COALESCE(dept.name,'None')
 FROM teacher LEFT OUTER JOIN dept ON (dept.id=teacher.dept)
+
+-- Use COUNT to show the number of teachers and the number of mobile phones.
+SELECT COUNT(teacher.name),COUNT(teacher.mobile)
+FROM teacher
