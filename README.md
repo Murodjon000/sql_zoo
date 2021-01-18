@@ -32,7 +32,7 @@ Please Note that you must have Git installed on your PC, this can be done [here]
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/SarvarKh/SQL-Zoo/issues).
+Feel free to check the [issues page](https://github.com/Murodjon000/sql_zoo/issues).
 
 ## Show your support
 
