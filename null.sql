@@ -21,3 +21,7 @@ SELECT teacher.name, dept.name
 -- Use COALESCE to print the mobile number
 SELECT name,COALESCE(mobile,'07986 444 2266') AS numb
 FROM teacher
+
+-- Use the COALESCE function and a LEFT JOIN to print the teacher name and department name. Use the string 'None' where there is no department.
+SELECT teacher.name,COALESCE(dept.name,'None')
+FROM teacher LEFT OUTER JOIN dept ON (dept.id=teacher.dept)
