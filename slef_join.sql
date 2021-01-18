@@ -29,3 +29,10 @@ WHERE a.stop=53 AND b.stop = 149
 -- refer to stops by name rather than by number.
 --  Change the query so that the services between 
 -- 'Fairmilehead' and 'Tollcross' are shown.
+
+SELECT a.company, a.num, stopa.name, stopb.name
+FROM route a JOIN route b ON
+a.company = b.company AND a.num = b.num
+JOIN stops AS stopa ON a.stop=stopa.id
+JOIN stops AS stopb ON b.stop=stopb.id
+WHERE stopa.name = 'Fairmilehead' AND stopb.name = 'Tollcross';
