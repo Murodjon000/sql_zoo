@@ -12,3 +12,8 @@ SELECT teacher.name, dept.name
 SELECT teacher.name, dept.name
  FROM teacher LEFT OUTER JOIN dept
            ON (teacher.dept=dept.id)
+
+-- Use a different JOIN so that all departments are listed
+SELECT teacher.name, dept.name
+ FROM teacher RIGHT OUTER JOIN dept
+           ON (teacher.dept=dept.id)
