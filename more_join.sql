@@ -60,3 +60,40 @@ SELECT yr,COUNT(title) FROM
 WHERE name='Rock Hudson'
 GROUP BY yr
 HAVING COUNT(title) > 2
+
+-- Lead actor in Julie Andrews movies
+SELECT title,name 
+FROM movie JOIN casting ON (movie.id=movieid AND ord=1)
+           JOIN actor ON (actor.id=actorid)
+WHERE movie.id IN(
+SELECT movieid FROM casting
+WHERE actorid IN (
+  SELECT id FROM actor
+  WHERE name='Julie Andrews')
+
+)
+
+-- Obtain a list, in alphabetical order, of actors who've had at least 15 starring roles.
+SELECT name
+FROM actor JOIN casting ON(actor.id=actorid AND ord=1 )
+GROUP BY name
+HAVING COUNT(ord)>=15
+
+-- List the films released in the year 1978 ordered by the number of actors in the cast, then by title.
+SELECT title, COUNT(actorid)
+FROM movie JOIN casting ON (movieid=movie.id AND movie.yr='1978')
+GROUP BY title
+ORDER BY COUNT(actorid) DESC,title
+
+-- List all the people who have worked with 'Art Garfunkel'
+SELECT name
+FROM movie JOIN casting ON (movieid=movie.id)
+           JOIN actor ON (actorid=actor.id)
+WHERE movie.id IN (
+SELECT casting.movieid
+FROM casting
+WHERE casting.actorid IN (
+SELECT actor.id FROM actor
+WHERE name='Art Garfunkel'
+)
+) AND actor.name<>'Art Garfunkel'
